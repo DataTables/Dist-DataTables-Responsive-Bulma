@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <version>2.2.7</version>
+        <id>datatables.net-responsive-bm</id>
+        <description>This is Responsive for DataTables with styling for [Bulma](https://bulma.io/)</description>
+        <repository type="git" url="https://github.com/DataTables/Dist-DataTables-Responsive-Bulma.git"/>
+        <authors>SpryMedia Ltd</authors>
+        <projectUrl>http://datatables.net</projectUrl>
+        <license type="expression">MIT</license>
+        <tags>Responsive  Bulma  Datatables jQuery table</tags>
+        <dependencies>
+            <dependency id="datatables.net-responsive" version=">=2.2.7"/>
+            <dependency id="datatables.net-bm" version=">=1.10.24"/>
+        </dependencies>
+        <contentFiles>
+            <files include="**/*" buildAction="Content"/>
+        </contentFiles>
+    </metadata>
+    <files>
+        <file src="js/responsive.bulma.js" target="content\Scripts"/>
+        <file src="js/responsive.bulma.js" target="contentFiles\any\any\wwwroot\js"/>
+        <file src="js/responsive.bulma.min.js" target="content\Scripts"/>
+        <file src="js/responsive.bulma.min.js" target="contentFiles\any\any\wwwroot\js"/>
+        <file src="css/responsive.bulma.css" target="content\Content"/>
+        <file src="css/responsive.bulma.css" target="contentFiles\any\any\wwwroot\css"/>
+        <file src="css/responsive.bulma.min.css" target="content\Content"/>
+        <file src="css/responsive.bulma.min.css" target="contentFiles\any\any\wwwroot\css"/>
+        <file src="types/responsive.bulma.d.ts" target="content\Scripts"/>
+        <file src="types/responsive.bulma.d.ts" target="contentFiles\any\any\wwwroot\js"/>
+    </files>
+</package>
+

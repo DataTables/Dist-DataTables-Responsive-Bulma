@@ -1,0 +1,46 @@
+{
+    "name": "datatables.net-responsive-bm",
+    "description": "Responsive for DataTables with styling for [Bulma](https://bulma.io/)",
+    "main": "js/responsive.bulma.js",
+    "style": "css/responsive.bulma.css",
+    "version": "2.2.7",
+    "files": [
+        "css/**/*.css",
+        "js/**/*.js"
+    ],
+    "keywords": [
+        "Responsive",
+        "Bulma",
+        "Datatables",
+        "jQuery",
+        "table",
+        "filter",
+        "sort"
+    ],
+    "dependencies": {
+        "datatables.net-responsive": ">=2.2.7",
+        "datatables.net-bm": ">=1.10.24",
+        "jquery": ">=1.7"
+    },
+    "moduleType": [
+        "globals",
+        "amd",
+        "node"
+    ],
+    "ignore": [
+        "composer.json",
+        "datatables.json",
+        "package.json"
+    ],
+    "author": {
+        "name": "SpryMedia Ltd",
+        "url": "http://datatables.net"
+    },
+    "homepage": "https://datatables.net",
+    "bugs": "https://datatables.net/forums",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DataTables/Dist-DataTables-Responsive-Bulma.git"
+    }
+}

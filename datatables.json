@@ -1,0 +1,15 @@
+{
+    "js": [
+        "js/responsive.bulma.js",
+        "js/responsive.bulma.min.js"
+    ],
+    "css": [
+        "css/responsive.bulma.css",
+        "css/responsive.bulma.min.css"
+    ],
+    "types": [
+        "types/responsive.bulma.d.ts"
+    ],
+    "src-repo": "http://github.com/DataTables/Responsive",
+    "last-tag": "2.2.7"
+}
