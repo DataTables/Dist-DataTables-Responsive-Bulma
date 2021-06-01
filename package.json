@@ -3,6 +3,7 @@
     "description": "Responsive for DataTables with styling for [Bulma](https://bulma.io/)",
     "main": "js/responsive.bulma.js",
     "style": "css/responsive.bulma.css",
+    "types": "./types/responsive.bulma.d.ts",
     "version": "2.2.7",
     "files": [
         "css/**/*.css",
