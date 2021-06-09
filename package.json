@@ -4,7 +4,7 @@
     "main": "js/responsive.bulma.js",
     "style": "css/responsive.bulma.css",
     "types": "./types/responsive.bulma.d.ts",
-    "version": "2.2.8",
+    "version": "2.2.9",
     "files": [
         "css/**/*.css",
         "js/**/*.js"
