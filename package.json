@@ -2,12 +2,14 @@
     "name": "datatables.net-responsive-bm",
     "description": "Responsive for DataTables with styling for [Bulma](https://bulma.io/)",
     "main": "js/responsive.bulma.js",
+    "module": "js/responsive.bulma.mjs",
     "style": "css/responsive.bulma.css",
     "types": "./types/responsive.bulma.d.ts",
     "version": "2.3.0",
     "files": [
         "css/**/*.css",
         "js/**/*.js",
+        "js/**/*.mjs",
         "types/**/*.d.ts"
     ],
     "keywords": [
