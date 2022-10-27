@@ -10,7 +10,8 @@
         "css/responsive.bulma.min.css"
     ],
     "types": [
-        "types/responsive.bulma.d.ts"
+        "types/responsive.bulma.d.ts",
+        "types/types.d.ts"
     ],
     "src-repo": "http://github.com/DataTables/Responsive",
     "last-tag": "2.3.0"
