@@ -1,4 +1,3 @@
-
 /*! Bulma integration for DataTables' Responsive
  * © SpryMedia Ltd - datatables.net/license
  */
