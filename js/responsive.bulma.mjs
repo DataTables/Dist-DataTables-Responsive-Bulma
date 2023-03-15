@@ -23,7 +23,7 @@ var _modal = $(
 )
 
 _display.modal = function ( options ) {
-	return function ( row, update, render ) {
+	return function ( row, update, render, closeCallback ) {
 		if ( ! update ) {
 			if ( options && options.header ) {
 				var header = _modal.find('div.modal-header');
@@ -39,17 +39,21 @@ _display.modal = function ( options ) {
 				.append( render() );
 
 			_modal
-				.appendTo( 'body' )
+				.appendTo( 'body' );
 
 			_modal.addClass('is-active is-clipped');
 
 			$('.modal-close').one('click', function() {
 				_modal.removeClass('is-active is-clipped');
-			})
+				closeCallback();
+			});
 			$('.modal-background').one('click', function() {
 				_modal.removeClass('is-active is-clipped');
-			})
+				closeCallback();
+			});
 		}
+
+		return true;
 	};
 };
 
