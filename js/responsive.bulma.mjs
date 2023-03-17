@@ -39,6 +39,7 @@ _display.modal = function ( options ) {
 				.append( render() );
 
 			_modal
+				.data('dtr-row-idx', row.index())
 				.appendTo( 'body' );
 
 			_modal.addClass('is-active is-clipped');
@@ -51,6 +52,17 @@ _display.modal = function ( options ) {
 				_modal.removeClass('is-active is-clipped');
 				closeCallback();
 			});
+		}
+		else {
+			if ( $.contains(document, _modal[0]) && row.index() === _modal.data('dtr-row-idx') ) {
+				_modal.find( 'div.modal-body' )
+					.empty()
+					.append( render() );
+			}
+			else {
+				// Modal not shown - do nothing
+				return null;
+			}
 		}
 
 		return true;
