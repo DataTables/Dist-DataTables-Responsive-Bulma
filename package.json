@@ -4,7 +4,7 @@
     "main": "js/responsive.bulma.js",
     "module": "js/responsive.bulma.mjs",
     "style": "css/responsive.bulma.css",
-    "types": "./types/types.d.ts",
+    "types": "./types/responsive.bulma.d.ts",
     "version": "2.4.1",
     "files": [
         "css/**/*.css",
@@ -22,8 +22,8 @@
         "sort"
     ],
     "dependencies": {
-        "datatables.net-responsive": ">=2.3.0",
-        "datatables.net-bm": ">=1.12.1",
+        "datatables.net-responsive": ">=2.4.1",
+        "datatables.net-bm": ">=1.13.4",
         "jquery": ">=1.7"
     },
     "moduleType": [
