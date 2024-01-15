@@ -11,7 +11,6 @@ let $ = jQuery;
 
 
 var _display = DataTable.Responsive.display;
-var _original = _display.modal;
 var _modal = $(
 	'<div class="modal DTED">' +
 		'<div class="modal-background"></div>' +
@@ -27,6 +26,12 @@ var _modal = $(
 
 _display.modal = function (options) {
 	return function (row, update, render, closeCallback) {
+		var rendered = render();
+
+		if (rendered === false) {
+			return false;
+		}
+
 		if (!update) {
 			if (options && options.header) {
 				var header = _modal.find('div.modal-header');
@@ -37,7 +42,7 @@ _display.modal = function (options) {
 					.append('<h4 class="modal-title subtitle">' + options.header(row) + '</h4>');
 			}
 
-			_modal.find('div.modal-body').empty().append(render());
+			_modal.find('div.modal-body').empty().append(rendered);
 
 			_modal.data('dtr-row-idx', row.index()).appendTo('body');
 
@@ -54,7 +59,7 @@ _display.modal = function (options) {
 		}
 		else {
 			if ($.contains(document, _modal[0]) && row.index() === _modal.data('dtr-row-idx')) {
-				_modal.find('div.modal-body').empty().append(render());
+				_modal.find('div.modal-body').empty().append(rendered);
 			}
 			else {
 				// Modal not shown - do nothing
