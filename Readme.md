@@ -27,7 +27,7 @@ import DataTable from 'datatables.net-bm';
 import 'datatables.net-responsive-bm'
 
 new DataTable('#myTable', {
-    // initalisation options
+    // initialisation options
 });
 ```
 
