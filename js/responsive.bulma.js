@@ -1,20 +1,72 @@
-/*! Bulma integration for DataTables' Responsive
- * © SpryMedia Ltd - datatables.net/license
+/*! Responsive Bulma styling 4.0.0-beta.1 for DataTables
+ * Copyright (c) SpryMedia Ltd - datatables.net/license
  */
 
+(function(factory){
+	if (typeof define === 'function' && define.amd) {
+		// AMD
+		define(['datatables.net-bm', 'datatables.net-responsive'], function (dt) {
+			return factory(window, document, dt);
+		});
+	}
+	else if (typeof exports === 'object') {
+		// CommonJS
+		var cjsRequires = function (root) {
+			if (! root.DataTable) {
+				require('datatables.net-bm')(root);
+			}
+
+			if (! window.DataTable.Responsive) {
+				require('datatables.net-responsive')(root);
+			}
+		};
+
+		if (typeof window === 'undefined') {
+			module.exports = function (root) {
+				if (! root) {
+					// CommonJS environments without a window global must pass a
+					// root. This will give an error otherwise
+					root = window;
+				}
+
+				cjsRequires(root);
+				return factory(root, root.document, root.DataTable);
+			};
+		}
+		else {
+			cjsRequires(window);
+			module.exports = factory(window, window.document, window.DataTable);
+		}
+	}
+	else {
+		// Browser
+		factory(window, document, window.DataTable);
+	}
+}(function(window, document, DataTable) {
+'use strict';
+
+
+
+var Dom = DataTable.Dom;
 var _display = DataTable.Responsive.display;
-var _modal = $(
-	'<div class="modal DTED">' +
-		'<div class="modal-background"></div>' +
-		'<div class="modal-content">' +
-		'<div class="modal-header">' +
-		'<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>' +
-		'</div>' +
-		'<div class="modal-body"/>' +
-		'</div>' +
-		'<button class="modal-close is-large" aria-label="close"></button>' +
-		'</div>'
-);
+var _modal = Dom
+	.c('div')
+	.classAdd('modal DTED')
+	.append(Dom.c('div').classAdd('modal-background'))
+	.append(
+		Dom
+			.c('div')
+			.classAdd('modal-content')
+			.append(Dom.c('div').classAdd('modal-header'))
+			.append(Dom.c('div').classAdd('modal-body'))
+	)
+	.append(
+		Dom
+			.c('button')
+			.attr('type', 'button')
+			.attr('aria-label', 'Close')
+			.classAdd('modal-close is-large')
+	);
 
 _display.modal = function (options) {
 	return function (row, update, render, closeCallback) {
@@ -31,26 +83,35 @@ _display.modal = function (options) {
 
 				header
 					.empty()
-					.append('<h4 class="modal-title subtitle">' + options.header(row) + '</h4>');
+					.append(
+						Dom
+							.c('h4')
+							.classAdd('modal-title subtitle')
+							.html(options.header(row))
+					);
 			}
 
 			_modal.find('div.modal-body').empty().append(rendered);
 
 			_modal.data('dtr-row-idx', row.index()).appendTo('body');
 
-			_modal.addClass('is-active is-clipped');
+			_modal.classAdd('is-active is-clipped');
 
-			$('.modal-close').one('click', function () {
-				_modal.removeClass('is-active is-clipped');
+			Dom.s('.modal-close').one('click', function () {
+				_modal.classRemove('is-active is-clipped');
 				closeCallback();
 			});
-			$('.modal-background').one('click', function () {
-				_modal.removeClass('is-active is-clipped');
+
+			Dom.s('.modal-background').one('click', function () {
+				_modal.classRemove('is-active is-clipped');
 				closeCallback();
 			});
 		}
 		else {
-			if ($.contains(document, _modal[0]) && row.index() === _modal.data('dtr-row-idx')) {
+			if (
+				_modal.isAttached() &&
+				row.index() === _modal.data('dtr-row-idx')
+			) {
 				_modal.find('div.modal-body').empty().append(rendered);
 			}
 			else {
@@ -62,3 +123,7 @@ _display.modal = function (options) {
 		return true;
 	};
 };
+
+
+return DataTable;
+}));
