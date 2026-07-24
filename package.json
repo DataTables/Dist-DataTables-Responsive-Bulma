@@ -5,7 +5,7 @@
     "module": "js/responsive.bulma.mjs",
     "style": "css/responsive.bulma.css",
     "types": "./types/responsive.bulma.d.ts",
-    "version": "4.0.0-beta.1",
+    "version": "4.0.0",
     "files": [
         "css/**/*.css",
         "js/**/*.js",
@@ -21,8 +21,8 @@
         "sort"
     ],
     "dependencies": {
-        "datatables.net-responsive": "4.0.0-beta.1",
-        "datatables.net-bm": "3.0.0-0"
+        "datatables.net-responsive": "4.0.0",
+        "datatables.net-bm": "^3"
     },
     "author": {
         "name": "SpryMedia Ltd",
