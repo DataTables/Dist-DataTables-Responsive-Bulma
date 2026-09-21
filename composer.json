@@ -1,6 +1,6 @@
 {
     "name": "datatables.net/datatables.net-responsive-bm",
-    "description": "Responsive for DataTables with styling for [Bulma](https://bulma.io/)",
+    "description": "Responsive for DataTables with styling for Bulma",
     "support": {
         "forum": "https://datatables.net/forums",
         "source": "https://github.com/DataTables/Dist-DataTables-Responsive-Bulma"
