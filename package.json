@@ -37,9 +37,10 @@
     "exports": {
         ".": {
             "types": "./types/responsive.bulma.d.ts",
+            "style": "./css/responsive.bulma.css",
             "import": "./js/responsive.bulma.mjs",
-            "default": "./js/responsive.bulma.mjs",
-            "require": "./js/responsive.bulma.js"
+            "require": "./js/responsive.bulma.js",
+            "default": "./js/responsive.bulma.mjs"
         },
         "./js/*": "./js/*",
         "./css": {
